@@ -1,0 +1,76 @@
+Lambda expressions
+
+Lambda expressions are another way of creating functions. We have already seen
+how to create functions using the def keyword followed by the name of the
+function and optional parameters. Lambda expressions are another way of
+accomplishing this, but they have a unique general characteristic which is that
+they are usually 'one time use' functions. Basically functions you want to
+create on the go without intending to formalize or re-use them again. They are
+also sometimes referred to as 'anonymous functions'.
+
+Some features of lambda expressions:
+- They are declared using the lambda keyword, instead of the def keyword.
+- They don't have names, which is why they are referred to as 'anonymous'
+functions.
+- The optional parameters list immediate follow the lambda keyword followed by
+a colon : and then the expression itself, example below:
+
+lambda x, y: x * y
+Notes on the line above:
+a) Notice there is no name, it's simply lambda, followed by the parameter list
+(in this case x and y).
+b) The return after the colon is implied.
+c) This creates a regular function object.
+
+- You can assign it to a variable, pass it as an argument to another function
+etc.
+
+Example use:
+
+Let's see the lambda expression we defined above in action, first as an argument
+to another function.
+
+def my_math_func(x, f):
+  return f(x)
+
+Consider the function above. This function takes a variable x and another
+function f as arguments. Then it returns f(x), implying that it is passing x as
+an argument to the function f and returning the value.
+
+Now, let's assume we are trying to model f(x) as returning the cubed value of x
+or f(x) = x^3 and we want to accomplish our my_math_func to do this. Then
+instead of creating a separate function to find the cube of a number, we can
+simply pass this as a lambda expression as the argument while calling
+my_math_func like below:
+
+def my_math_func(x, f):    
+  return f(x)
+
+my_math_func(2, lambda x: x**3)
+
+If you want to print this value, and are not using Jupyter Notebooks, then you
+want to replace the last line with the line below:
+
+print(my_math_func(2, lambda x: x**3))
+
+You can also specify default values for parameters in lambda expressions. For
+example, if you wanted your function to not just return the cube but add a
+separate number to it which you provide as a constant, you can do so like below:
+
+Math expression: f(x, y) = x^3 + y, with y with a fixed value of 100 for the
+first iteration.
+
+Equivalent code: lambda x, y=100: x**3 + y
+
+Let's use this lambda expression to see how we can assign this to a variable
+below:
+
+my_equation = lambda x, y=100: x**3 + y
+print(my_equation(3)) # This should print 127
+print(my_equation(5)) # This should print 225
+
+Personal notes on lambda functions:
+- Try to keep them simple, if you want to use assignments within your function
+then you cannot use lambda expressions.
+- When thinking of using lambda expressions: think 1 line, single expression,
+not going to re-use.

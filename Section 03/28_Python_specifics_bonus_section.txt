@@ -1,0 +1,11 @@
+I intend to post some bonus Python specific content for the remainder of
+section 3. This content does not apply to Algorithms and Data Structures that
+we will explore in sections 4 and 5 but will be good coding practice since it
+relates to the Python programming language and will be good to know for coding
+interviews. I have so far added the following topics:
+
+1) Lambda expressions
+2) Generators - under the hood (how they work)
+3) Create your own generators using yield
+
+I will update this lecture as I add more content and exercises. Enjoy!

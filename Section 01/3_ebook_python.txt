@@ -1,0 +1,14 @@
+E-book
+
+I built an e-book which covers the content from the introductory "Python
+in-depth" section of this course. This book can be used in conjunction with the
+section (recommended for beginners) or by itself (if you have some prior
+experience). There are text notes with each video lecture in the course as well,
+so usage of this book is fully optional and not required.
+
+Feel free to download a copy for yourself. There are two versions available for
+your convenience - html and pdf.
+
+Book chapters: Command Line basics, Strings, Print formatting, Numbers,
+Branching (if/elif/else blocks), Lists, Dictionaries, Sets, For loops and
+Generators, While loops, Functions and Classes.

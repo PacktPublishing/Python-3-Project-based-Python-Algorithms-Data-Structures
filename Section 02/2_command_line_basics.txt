@@ -1,0 +1,40 @@
+Below are some helpful commands to use to navigate the command line/terminal in
+your computer. If you are not familiar with it at this time, don't worry about
+it at all. I'll discuss what it is in the videos if/when I use it. Instructions
+are provided for both Windows and Mac/Linux.
+
+There is a command line basics video in the beginning of the next section as
+well but having these now might help in this development section. Again, I will
+mention it in the videos if/when I use the terminal/command line or if I use any
+commands associated with it. Just keep them handy for now.
+
+Good luck and I hope you find these useful!
+
+To launch the terminal in a Mac: Go to your applications/launchpad or spotlight
+search and start typing term and the terminal will pop-up. You can click on it
+to launch it.
+
+To launch the command line in Windows: Go to your search bar and start type cmd 
+and the command line app will pop up. Alternatively you can use the PowerShell
+terminal by looking for that app instead.
+
+To see which directory you are currently in:
+Windows-> cd
+Mac/Linux-> pwd
+
+To list files and folder under current directory:
+Windows-> dir
+Mac/Linux-> ls
+
+To move to a directory listed under current directory:
+Windows, Mac/Linux-> cd name_of_directory
+
+To move up one directory from current directory:
+Windows, Mac/Linux-> cd ..
+
+To create a new directory under the current directory:
+Windows, Mac/Linux-> mkdir name_of_directory
+
+To clear the terminal/command prompt screen:
+Windows-> cls
+Mac/Linux-> clear

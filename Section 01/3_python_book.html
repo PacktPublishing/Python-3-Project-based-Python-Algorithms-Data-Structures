@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>python_book</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Python Crash Course</h1>
+
+<h3 id="toc_1">Python - Programming, Computer Science, Algorithms and Data Structures</h3>
+
+<h4 id="toc_2">Part 1, version 1.1</h4>
+
+<p><em>by Mashrur Hossain</em> </p>
+
+<p>© 2019 Matacode Inc. All rights reserved. No portion of this book may be reproduced in any form without permission from the publisher, except as permitted by U.S. copyright law. </p>
+
+<h3 id="toc_3"><a name="toc"></a>Table of contents</h3>
+
+<ol>
+<li><a href="#commandline">Command line basics</a></li>
+<li><a href="#strings">Strings</a></li>
+<li><a href="#printing">Print formatting</a></li>
+<li><a href="#numbers">Numbers</a></li>
+<li><a href="#branching">Branching with if/elif/else</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#dictionaries">Dictionaries</a></li>
+<li><a href="#sets">Sets</a></li>
+<li><a href="#tuples">Tuples</a></li>
+<li><a href="#forloops">For-loops and generators</a></li>
+<li><a href="#whileloops">While-loops</a></li>
+<li><a href="#functions">Functions</a></li>
+<li><a href="#classes">Classes</a>
+<br/>
+<br/>
+<br/></li>
+</ol>
+
+<h2 id="toc_4"><a name="commandline"></a>Command line Basics</h2>
+
+<p>The commands below will allow you to work through the content in this course without any difficulty.</p>
+
+<p>To see which directory you are currently in:  </p>
+
+<p>Windows-&gt; 
+<code>
+cd  
+</code></p>
+
+<p>Mac/Linux-&gt; 
+<code>pwd</code></p>
+
+<p>To list files and folder under current directory:</p>
+
+<p>Windows-&gt; <code>dir</code></p>
+
+<p>Mac/Linux-&gt; <code>ls</code></p>
+
+<p>To move to a directory listed under current directory:</p>
+
+<p>Windows, Mac/Linux-&gt; <code>cd name_of_directory</code></p>
+
+<p>To move up one directory from current directory:</p>
+
+<p>Windows, Mac/Linux-&gt; <code>cd ..</code></p>
+
+<p>To create a new directory under the current directory:</p>
+
+<p>Windows, Mac/Linux-&gt; <code>mkdir name_of_directory</code></p>
+
+<p>To clear the terminal/command prompt screen:</p>
+
+<p>Windows-&gt; <code>cls</code></p>
+
+<p>Mac/Linux-&gt; <code>clear</code></p>
+
+<p><a href="#toc">Back to table of contents</a>
+<br/>
+<br/>
+<br/></p>
+
+<h2 id="toc_5"><a name="strings"></a>Strings</h2>
+
+<p>Official Python documentation on strings can be found here: <a href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str">https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str</a></p>
+
+<p>Working with text in Python is accomplished by using strings. To create a string you can wrap the text you want to create/use with either single, double or triple quotes. The following are all valid strings.</p>
+
+<div><pre><code class="language-python">&#39;Hello world using single quotes&#39;
+&quot;Hello world using double quotes&quot;
+&quot;&quot;&quot;Hello world using
+triple quotes, also known as
+multi-line strings&quot;&quot;&quot;</code></pre></div>
+
+<p>To type a comment in Python you can use the # sign. Anything written after the # in a python file will be ignored by the Python interpreter. Example below.</p>
+
+<div><pre><code class="language-python"># This is a comment
+</code></pre></div>
+
+<p>To print an object to the screen, you can use the print function.</p>
+
+<div><pre><code class="language-python">print(&#39;Hello world&#39;) # This will print Hello world</code></pre></div>
+
+<p>To run the program that contains the code above, first make sure the file ends with an extension of .py<br/>
+Second, make sure you are in the same directory in your terminal as where the file is saved. So let&rsquo;s say you have saved the code above in a file named lecture_1.py and you are in the same directory in your terminal where this file is saved. You can then enter the following command in your terminal to run the program. (Ignore the $ in the beginning of the line, that signifies the command prompt)</p>
+
+<div><pre><code class="language-bash">$ python lecture_1.py </code></pre></div>
+
+<p>Running the command above will result in the following output to your terminal screen:</p>
+
+<div><pre><code class="language-bash">$ python lecture_1.py
+Hello world </code></pre></div>
+
+<p>To use an apostrophe &lsquo; in your print statement, you can wrap your string in double quotes.</p>
+
+<div><pre><code class="language-python">print(&quot;I&#39;m using an apostrophe in this statement&quot;)</code></pre></div>
+
+<p>To use quotes within your print statement, you can wrap your string in single quotes like below.</p>
+
+<div><pre><code class="language-python">print(&#39;This is a &quot;quote from a book&quot; which I like&#39;)</code></pre></div>
+
+<p>Variables are used to reference objects in Python, you can think of variables as memory addresses. They should be named using snake case (lower case and words separated by underscore). Example of snake case -&gt; my_name.</p>
+
+<div><pre><code class="language-python">message = &quot;Hello! welcome to the Algorithm&#39;s course&quot;
+name = &quot;Mashrur&quot;</code></pre></div>
+
+<p>You can use variables in your print function to print to the screen</p>
+
+<div><pre><code class="language-python">message = &quot;Hello! welcome to the Algorithm&#39;s course&quot;
+name = &quot;Mashrur&quot;
+print(message)
+print(name)</code></pre></div>
+
+<p>You can print multiple strings using the print function separating them by using commas in-between. A comma will automatically add a whitespace between the strings.</p>
+
+<div><pre><code class="language-python">print(message, name)</code></pre></div>
+
+<p>Running the code above will result in the following output to your terminal screen:</p>
+
+<div><pre><code class="language-bash">$ python lecture_1.py
+Hello! welcome to the Algorithm&#39;s course Mashrur </code></pre></div>
+
+<h3 id="toc_6">String concatenation</h3>
+
+<p>You can use string concatenation and add multiple strings together using the + operator</p>
+
+<div><pre><code class="language-python">message = &quot;Welcome to the course&quot;
+name = &quot;Mashrur&quot;
+print(message + name)</code></pre></div>
+
+<p>To add an empty space in between the two strings, which is not automatically added, you can concatenate an empty whitespace string in the middle of the two strings like below.</p>
+
+<div><pre><code class="language-python">print(message + &quot; &quot; + name)</code></pre></div>
+
+<p>Running the code above will result in the following output to your terminal screen:</p>
+
+<div><pre><code class="language-bash">$ python lecture_1.py
+Welcome to the course Mashrur</code></pre></div>
+
+<h3 id="toc_7">Indexing</h3>
+
+<p>Strings are sequences of characters which are indexed. We can index into a string by using square brackets. Try out the examples below in your editor.</p>
+
+<div><pre><code class="language-python">movie_name = &quot;Interstellar&quot;
+print(movie_name[0]) # This will print &#39;I&#39; which is at index 0
+print(movie_name[1]) # This will print &#39;n&#39; which is at index 1
+print(movie_name[11]) # This will print &#39;r&#39; 
+print(movie_name[-1]) # This will also print &#39;r&#39;, last item
+print(movie_name[-2]) # This will print &#39;a&#39;, reverse index</code></pre></div>
+
+<p>You can also test this code out directly in the Python console or Python interactive shell which is provided by every python installation. To start the console you can type in python from your command line. Mine looks like below.</p>
+
+<div><pre><code class="language-bash">$ python
+Python 3.6.0 |Anaconda custom (x86_64)| (default, Dec 23 2016, 13:19:00) 
+[GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.57)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; </code></pre></div>
+
+<p><em>Note: If you have both python 2 and 3 installed, you may need to specify python3 to start the console using Python 3</em></p>
+
+<p>You can directly type Python code in this console, and you won&rsquo;t need the print function to display the output. Example below.</p>
+
+<div><pre><code class="language-bash">&gt;&gt;&gt; movie_name = &quot;Interstellar&quot;
+&gt;&gt;&gt; movie_name[0]
+&#39;I&#39;
+&gt;&gt;&gt; print(movie_name[0])
+I
+&gt;&gt;&gt; 
+</code></pre></div>
+
+<p>To exit the console at any point you can type exit() like below.</p>
+
+<div><pre><code class="language-bash">&gt;&gt;&gt; exit()
+$ </code></pre></div>
+
+<h3 id="toc_8">Strings are immutable</h3>
+
+<p>You cannot change the value of a specific string once it is created. For example, say you have the string my_name = &ldquo;joan&rdquo;. If you wanted to change the character &#39;a&rsquo; at index 2 to an &lsquo;h&rsquo;, essentially changing &ldquo;joan&rdquo; to &ldquo;john&rdquo;, you cannot use code like.</p>
+
+<div><pre><code class="language-python">my_name = &quot;joan&quot;
+my_name[2] = &quot;h&quot; # This line will result in an error
+print(my_name)</code></pre></div>
+
+<p>If you ran the code above, you would get the following output.</p>
+
+<div><pre><code class="language-bash">$ python lecture_1.py 
+Traceback (most recent call last):
+  File &quot;lecture_1.py&quot;, line 2, in &lt;module&gt;
+    my_name[2] = &quot;h&quot;
+TypeError: &#39;str&#39; object does not support item assignment
+$ </code></pre></div>
+
+<p>The line <em>&ldquo;TypeError: &lsquo;str&rsquo; object does not support item assignment&rdquo;</em> is letting you know that strings are immutable and their value cannot be changed. To make the change above you have to create a new string object and assign it like below (You can use the same variable name, but it will be a different string object).</p>
+
+<div><pre><code class="language-python">my_name = &quot;joan&quot;
+print(my_name)
+my_name = &quot;john&quot; # This will create a new my_name string object
+print(my_name)</code></pre></div>
+
+<p>If you ran the code above, you would get the output you were looking for.</p>
+
+<div><pre><code class="language-bash">$ python testing_practice.py 
+joan
+john</code></pre></div>
+
+<h3 id="toc_9">Slicing</h3>
+
+<p>You can use slicing to select portions of the string or substrings to work with. For example, if we used slicing notation on our movie_name variable defined above, it would look like below.</p>
+
+<div><pre><code class="language-python">print(movie_name[0:5])  # This will print &#39;Inter&#39;
+print(movie_name[:5])   # We can omit the starting index 0, if we
+                        # want to start at the beginning to get
+                        # &#39;Inter&#39; as well
+print(movie_name[5:])   # This will print &#39;stellar&#39;, begin at 
+                        # index 5 and go to the end
+print(movie_name[:])    # This will print &#39;Interstellar&#39;, begin 
+                        # to end
+print(movie_name[5:9])  # This will print &#39;stel&#39;, index 5 to 8,
+                        # excluding the stop index of 9</code></pre></div>
+
+<p>You can specify the step size as an optional third argument like below.</p>
+
+<div><pre><code class="language-python">print(movie_name[5:9:2])    # This will print &#39;se&#39;, moving forward 
+                            # by 2 steps instead of the default 1
+print(movie_name[::2])      # This will print &quot;Itrtla&quot;
+print(movie_name[::-1])     # This will reverse the string and
+                            # print &#39;ralletsretnI&#39;</code></pre></div>
+
+<h3 id="toc_10">Methods and functions</h3>
+
+<p>Python provides built-in methods and functions which we can run on string objects based on our needs. 
+You can find more information on built-in functions by the python standard library here: <a href="https://docs.python.org/3/library">https://docs.python.org/3/library</a></p>
+
+<p>Try out some built-in functions on strings like below, see if you get the output you were expecting.</p>
+
+<div><pre><code class="language-python">message = &quot;Welcome to the course&quot;
+print(len(message)) # This gives us the number of characters 
+                    # in the string
+print(type(message)) # This gives us the type of object 
+                    # message is, string in this case
+print(id(message))  # This gives us an integer representation 
+                    # of the message variable in memory</code></pre></div>
+
+<p>Running the code above would result in the following output in the terminal.</p>
+
+<div><pre><code class="language-bash">$ python lecture_1.py 
+21
+&lt;class &#39;str&#39;&gt;
+4530028168
+$ </code></pre></div>
+
+<p>You can also run built-in methods on string objects provided by python. Methods differ from functions in that methods run on specific objects (a specific string here) on which they are called. They are associated with that object type. We will explore these differences in much more detail as we progress through the course. </p>
+
+<p>For now, think of the methods below as specific to string objects and to use them you can &lsquo;chain&rsquo; them to the string using the dot or &lsquo;.&rsquo; notation. Try out the code below to see what each method does to the string you run it on.</p>
+
+<div><pre><code class="language-python">message = &quot;Welcome to the course&quot;
+print(message.capitalize())
+print(message.upper())
+print(message.lower())</code></pre></div>
+
+<p>Running the code above will result in the following output.</p>
+
+<div><pre><code class="language-bash">$ python lecture_1.py 
+Welcome to the algorithms course
+WELCOME TO THE ALGORITHMS COURSE
+welcome to the algorithms course
+$ </code></pre></div>
+
+<p>You can use the split() method to separate each word in a string and return a list of words. By default the split will happen on whitespace. You can also specify what to split on like below.</p>
+
+<div><pre><code class="language-python">message = &quot;Welcome to the Algorithms course&quot;
+print(&quot;Initial message:&quot;, message)
+print(message.split())
+print(message.split(&quot; &quot;)) # same output as above line
+
+message = &quot;Welcome-to-the-Algorithms-course&quot;
+print(&quot;Updated message:&quot;, message)
+print(message.split(&quot;-&quot;)) # specifying to split on - instead of
+                          # the default whitespace
+</code></pre></div>
+
+<p>Running the code above will result the following output.</p>
+
+<div><pre><code class="language-none">$ python lecture_1.py 
+Initial message: Welcome to the Algorithms course
+[&#39;Welcome&#39;, &#39;to&#39;, &#39;the&#39;, &#39;Algorithms&#39;, &#39;course&#39;]
+[&#39;Welcome&#39;, &#39;to&#39;, &#39;the&#39;, &#39;Algorithms&#39;, &#39;course&#39;]
+Updated message: Welcome-to-the-Algorithms-course
+[&#39;Welcome&#39;, &#39;to&#39;, &#39;the&#39;, &#39;Algorithms&#39;, &#39;course&#39;]
+$ </code></pre></div>
+
+<p>You can convert the items from the resulting list back to a string by using the join() method. Example below.</p>
+
+<div><pre><code class="language-python">message = &quot;Welcome-to-the-Algorithms-course&quot;
+print(&quot;Initial message:&quot;, message)
+message_list = message.split(&quot;-&quot;)
+print(&quot;Converted to a list:&quot;, message_list)
+new_message = &quot; &quot;.join(message_list)
+print(&quot;Converted back to string:&quot;, new_message)</code></pre></div>
+
+<p>Running the code above will result in the following output.</p>
+
+<div><pre><code class="language-none">$ python lecture_1.py 
+Initial message: Welcome-to-the-Algorithms-course
+Converted to a list: [&#39;Welcome&#39;, &#39;to&#39;, &#39;the&#39;, &#39;Algorithms&#39;, &#39;course&#39;]
+Converted back to string: Welcome to the Algorithms course
+$ 
+</code></pre></div>
+
+<p>You can import more features and functionality available to strings by importing the string module in your code. Documentation can be found here: <a href="https://docs.python.org/3.7/library/string.html">https://docs.python.org/3.7/library/string.html</a></p>
+
+<p>If you want to import the entire string module you can use the following code on top of your python script.</p>
+
+<div><pre><code class="language-python">import string</code></pre></div>
+
+<p>If you want to import a specific feature, let&rsquo;s take the ascii_lowercase constant as an example, then you can do so like below.</p>
+
+<div><pre><code class="language-python">from string import ascii_lowercase</code></pre></div>
+
+<p>You can then use it in your code.</p>
+
+<div><pre><code class="language-python">from string import ascii_lowercase
+print(&quot;Lowercase alphabet:&quot;, ascii_lowercase)</code></pre></div>
+
+<p>Running the code above will result in the following output.</p>
+
+<div><pre><code class="language-bash">$ python lecture_1.py 
+Lowercase alphabet: abcdefghijklmnopqrstuvwxyz</code></pre></div>
+
+<p>This concludes our introductory look at strings. We will continue to learn more about them in upcoming chapters.</p>
+
+<p><a href="#toc">Back to table of contents</a>
+<br/>
+<br/>
+<br/></p>
+
+<h2 id="toc_11"><a name="printing"></a>Print formatting</h2>
+
+<p>There are multiple ways you can format how text or objects are displayed by your print statements. We will explore 3 of them in this chapter.</p>
+
+<p>Take the example below where we have a variable stock_price defined to be the 1100 (this 1100 is a number, an integer specifically, we will explore them more in the next chapter). One way to print this would be to use a comma after the first string within the print statement which we have seen already.</p>
+
+<div><pre><code class="language-python">stock_price = 1100
+print(&quot;Price of google stock is:&quot;, stock_price)</code></pre></div>
+
+<p>You can also use the format() method or f&#39;strings. Let&rsquo;s look at format() first.</p>
+
+<div><pre><code class="language-python">stock_price = 1100
+print(&quot;Price of google stock is: {}&quot;.format(stock_price))</code></pre></div>
+
+<p>Python simply takes the object listed within the parenthesis of the format method call and places it within the {} of the string.</p>
+
+<p>You can do the same using f&#39;strings.</p>
+
+<div><pre><code class="language-python">stock_price = 1100
+print(f&quot;Price of google stock is: {stock_price}&quot;)</code></pre></div>
+
+<p>If all 3 methods above were placed one after the other and we ran such a script it would give us the following output in the terminal.</p>
+
+<div><pre><code class="language-bash">$ python lecture_2.py 
+Price of google stock is: 1100
+Price of google stock is: 1100
+Price of google stock is: 1100</code></pre></div>
+
+<p>You can use multiple variables as well.</p>
+
+<div><pre><code class="language-python">today_price = 1100
+yesterday_price = 1000
+print(&quot;Today&#39;s price:&quot;, today_price, &quot;yesterday&#39;s price:&quot;, yesterday_price)
+print(&quot;Today&#39;s price: {}, yesterday&#39;s price: {}&quot;.format(today_price, yesterday_price))
+print(f&quot;Today&#39;s price: {today_price}, yesterday&#39;s price: {yesterday_price}&quot;)</code></pre></div>
+
+<p>Output of the program above would be like below.</p>
+
+<div><pre><code class="language-none">$ python lecture_2.py 
+Today&#39;s price: 1100 yesterday&#39;s price: 1000
+Today&#39;s price: 1100, yesterday&#39;s price: 1000
+Today&#39;s price: 1100, yesterday&#39;s price: 1000
+$ </code></pre></div>
+
+<h3 id="toc_12">Special characters</h3>
+
+<p>You can use special characters within the quotation marks of strings. These characters have special meaning. 3 such characters are listed below.</p>
+
+<p>\ - is an escape character, it escapes the special character
+following it in a string</p>
+
+<p>\n - species a new line within the string</p>
+
+<p>\t - adds a tab in it&rsquo;s place within the string</p>
+
+<p>Take the line of code below as an example.</p>
+
+<div><pre><code class="language-python">print(&quot;My name is jon snow and not only do I know nothing but I also do nothing&quot;)</code></pre></div>
+
+<p>This statement can be broken up into multiple lines with \</p>
+
+<div><pre><code class="language-none">print(&quot;My name is jon snow and \
+not only do I know nothing but \
+I also do nothing&quot;)</code></pre></div>
+
+<p>If you run the code above it will display the line as a single line. Python simply &lsquo;escapes&rsquo; the implied new lines at the end of each line because of the \ character that was used.</p>
+
+<p>\n can be used to print it in multiple lines.</p>
+
+<div><pre><code class="language-python">print(&quot;My name is jon snow\nI know nothing\nI also do nothing&quot;)</code></pre></div>
+
+<p>You can run the code above to get the output below.</p>
+
+<div><pre><code class="language-none">$ python lecture_2.py 
+My name is jon snow
+I know nothing
+I also do nothing</code></pre></div>
+
+<p>\t can be used to introduce tabs within the lines</p>
+
+<div><pre><code class="language-python">print(&quot;My name is jon snow\n \tI know nothing\n\t\tI also do nothing&quot;)</code></pre></div>
+
+<p>This concludes our look at print formatting and special characters. We will learn more about and practice using them in upcoming chapters.</p>
+
+<p><a href="#toc">Back to table of contents</a>
+<br/>
+<br/>
+<br/></p>
+
+<h2 id="toc_13"><a name="numbers"></a>Numbers</h2>
+
+<p>Numbers in Python (standard library) are represented using integers, floats and complex numbers. In this course we will cover integers and floats which are most common.
+Documentation on integers and floats can be found here:
+<a href="https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex">https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex</a></p>
+
+<p>Integers are whole numbers, no decimals (example 1, 2, 10, 500). Floats on the other hand include decimals or digits after the decimal.
+To check the type of an object (this will work with other types beyond integers and floats), you can use the type function, example below.</p>
+
+<div><pre><code class="language-python">num_1 = 10
+print(type(num_1)) # This will return class &#39;int&#39;</code></pre></div>
+
+<p>You can perform standard math operations using <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> operators</p>
+
+<div><pre><code class="language-python">print(4+4) # output 8
+print(10-5) # output 5
+print(10*2) # output 20
+print(10/2) # output 5.0</code></pre></div>
+
+<p>Division will give you a float (decimal value number) by default.
+To perform floor division, or remove the decimal you can use <code>//</code></p>
+
+<div><pre><code class="language-python">print(10//3) # output 3</code></pre></div>
+
+<p>You can use the mod operator <code>%</code> to find the remainder.</p>
+
+<div><pre><code class="language-python">print(10%3) # output 1
+print(10%2) # output 0</code></pre></div>
+
+<p>To take one number to the power of another number, you can use
+the <code>**</code> operator</p>
+
+<div><pre><code class="language-python">print(5**2) # output 25 (this is 5 squared)
+print(5**3) # output 125 (this is 5 cubed)</code></pre></div>
+
+<p>You can import the math module and use functions provided by it. Documentation on the math module can be found here: <a href="https://docs.python.org/3/library/math.html">https://docs.python.org/3/library/math.html</a></p>
+
+<div><pre><code class="language-python">import math
+print(math.pow(10,5)) # output 100000.0, this is 10 to the power 5</code></pre></div>
+
+<p>Similarly, you can import the random module and generate random
+integers using the randint function. More information on the random module can be found here: <a href="https://docs.python.org/3/library/random.html">https://docs.python.org/3/library/random.html</a></p>
+
+<div><pre><code class="language-python">import random
+print(random.randint(0,1000))   # output random integer between 0
+                                # and 1000</code></pre></div>
+
+<p>You can use other functions on numbers as well. One such function is the abs function which returns the absolute value of a number (removes the negative sign)</p>
+
+<div><pre><code class="language-python">num_2 = -10
+print(abs(num_2))   # output 10</code></pre></div>
+
+<h3 id="toc_14">Type casting</h3>
+
+<p>You can convert one data type to another using type casting. To convert the string &ldquo;10&rdquo; to the integer 10, you can cast it to an int like below.</p>
+
+<div><pre><code class="language-python">my_string = &quot;10&quot;
+my_num = int(my_string) # this will convert &quot;10&quot; to int 10
+print(type(my_num)) # output will be class &#39;int&#39;</code></pre></div>
+
+<p>Similarly you can convert an int to a string, 10 to &ldquo;10&rdquo; by casting it to a string (str)</p>
+
+<div><pre><code class="language-python">my_num = 10
+my_new_string = str(my_num)     # this will convert 10 to &quot;10&quot;
+print(type(my_new_string))      # output will be class &#39;str&#39;</code></pre></div>
+
+<p>You can get input from the user of the program using the input() function. This is displayed in the video lecture on numbers where a multiplication program is used. The input received from the user is always in string format. Therefore, if you want to use that input to perform math operations, you have to cast it to an int or float first. The multiplication program code is shown below.</p>
+
+<div><pre><code class="language-python">print(&quot;Welcome to the multiplication program&quot;)
+print(&quot;-&quot;*30)
+num_1 = int(input(&quot;Enter a number to multiply-&gt; &quot;))
+num_2 = int(input(&quot;Enter a second number to multiply-&gt; &quot;))
+result = num_1 * num_2
+print(result)</code></pre></div>
+
+<p>This concludes our introductory look at working with numbers. We will learn more about them as we continue to work with them in later chapters.</p>
+
+<p><a href="#toc">Back to table of contents</a>
+<br/>
+<br/>
+<br/></p>
+
+<h2 id="toc_15"><a name="branching"></a>Branching and control flow using if/elif/else</h2>
+
+<p>You can control the execution flow of your program using if/elif and else blocks. This is known as branching. The if and elif expressions use conditional operators which evaluate to <code>True</code> or <code>False</code>.</p>
+
+<p>Documentation on conditional operators can be found here:
+<a href="https://docs.python.org/3/library/stdtypes.html#comparisons">https://docs.python.org/3/library/stdtypes.html#comparisons</a></p>
+
+<p>Branching is best explained with examples, some are below.</p>
+
+<div><pre><code class="language-python">choice = &#39;1&#39;
+if choice == &#39;1&#39;:
+    print(&#39;You have chosen option 1&#39;)   # make note of the indentation
+                                        # of this line
+elif choice == &#39;2&#39;:
+    print(&#39;You have chosen option 2&#39;)   # make note of the indentation
+                                        # of this line as well
+else:
+    print(&#39;You have made an invalid choice&#39;)</code></pre></div>
+
+<p>if/elif/else blocks take the form of the condition followed by a <code>:</code>
+and then the code you want executed if that condition is true underneath it. This block of code underneath the condition needs to be indented in by 1 tab in order to be considered as part of the code block associated with the condition. </p>
+
+<p>Note: elif and else are optional based on your program&rsquo;s requirements. You can just have an if condition without either an elif condition or an else. Or you can have an if/else condition without an elif. You can also have multiple elif conditions if you are testing for multiple conditions before getting to the else condition. In the example above if you wanted to see if the choice was 3, you could&rsquo;ve simply added an additional elif condition.</p>
+
+<p>Some more examples below. First of a boolean test using the <code>not</code> operator.</p>
+
+<div><pre><code class="language-python">made_payment = True
+a = &#39;Please pay monthly premium&#39;
+b = &#39;Welcome to your homepage&#39;
+
+if not made_payment:
+    print(a)
+else:
+    print(b)</code></pre></div>
+
+<p>Second, you can combine comparison operators and conditional tests.</p>
+
+<div><pre><code class="language-python">i = 20
+j = 10
+k = 30
+
+if i &lt; j and i &lt; k:
+    print(&quot;i is less than j and k&quot;)
+elif i == j and i == k:
+    print(&quot;i is equal to j and k&quot;)
+else:
+    print(&quot;i is greater than j&quot;)</code></pre></div>
+
+<p>You can also compress and simplify simple if/else blocks using ternary operators. Below is an example of using ternary operators to compress an if/else block used earlier.</p>
+
+<div><pre><code class="language-python">made_payment = True
+a = &#39;Please pay monthly premium&#39;
+b = &#39;Welcome to your homepage&#39;
+
+print(a) if not made_payment else print(b)</code></pre></div>
+
+<p>The last line in the code above can also be written as below.</p>
+
+<div><pre><code class="language-python">print(b) if made_payment else print(a)</code></pre></div>
+
+<p>You can nest if/elif/else blocks within other if/elif/else blocks. Below we have an example of the multiplication program we initially saw in the numbers chapter. Here it has been modified to perform either multiplication or division based on user input and a nested if condition within it.</p>
+
+<div><pre><code class="language-python">print(&quot;Welcome to the calc program&quot;)
+print(&quot;-&quot;*30)
+choice = input(&quot;Choose 1 to multiply, 2 to divide-&gt; &quot;)
+if choice == &quot;1&quot; or choice ==&quot;2&quot;:
+    num_1 = int(input(&quot;Enter first number-&gt; &quot;))
+    num_2 = int(input(&quot;Enter second number-&gt; &quot;))
+    if choice == &quot;1&quot;:
+        print(f&quot;{num_1} multiplied by {num_2} is: {num_1*num_2}&quot;)
+    else:
+        print(f&quot;{num_1} divided by {num_2} is: {num_1/num_2}&quot;)
+else:
+    print(&quot;You&#39;ve made an invalid selection&quot;)</code></pre></div>
+
+<p>This concludes our introductory look at branching with if/elif/else conditions. We will see a lot of examples and usage of branching as it&rsquo;s one of the staples of programming in future chapters.</p>
+
+<p><a href="#toc">Back to table of contents</a>
+<br/>
+<br/>
+<br/></p>
+
+<h2 id="toc_16"><a name="lists"></a>Lists</h2>
+
+<p>Lists are compound data structures. They are collections of objects, mutable, they maintain order and are indexed.
+You can find additional documentation on lists here: <a href="https://docs.python.org/3/library/stdtypes.html#list">https://docs.python.org/3/library/stdtypes.html#list</a></p>
+
+<p>Lists begin with an open square bracket <code>[</code> and close with a closing square bracket &lsquo;]&rsquo; and each element/object contained within the list is separated by commas. These objects can be other compound data structures like lists as well.</p>
+
+<p>An example list is displayed below.</p>
+
+<div><pre><code class="language-python">my_list = [1,2,3,4,5,6,7,&#39;hello&#39;,&#39;world&#39;]
+print(my_list)</code></pre></div>
+
+<p>You can run functions on lists like len(), min(), max(). Examples below.</p>
+
+<div><pre><code class="language-python">my_list = [15, 6, 7, 8, 35, 12, 14, 4, 10, 15]
+print(len(my_list)) # will return 10, number of integers in list
+print(min(my_list)) # will return 4, minimum value in list
+print(max(my_list)) # will return 35, maximum value in list</code></pre></div>
+
+<p>You can add objects to the list using the append() method. Append will add the object to the back of the list. Example below </p>
+
+<div><pre><code class="language-python">my_strings_list = [&quot;comp sci&quot;, &quot;physics&quot;, &quot;elec engr&quot;, &quot;philosophy&quot;]
+print(my_strings_list)
+my_strings_list.append(&quot;art&quot;)
+print(my_strings_list)</code></pre></div>
+
+<p>If you run the code above, you&rsquo;ll get output like below in your terminal.</p>
+
+<div><pre><code class="language-none">$ python testing_practice.py 
+[&#39;comp sci&#39;, &#39;physics&#39;, &#39;elec engr&#39;, &#39;philosophy&#39;]
+[&#39;comp sci&#39;, &#39;physics&#39;, &#39;elec engr&#39;, &#39;philosophy&#39;, &#39;art&#39;]</code></pre></div>
+
+<p>If you use the append() method to add another list to your list, then the new list will show up in list form within your list. Example below.</p>
+
+<div><pre><code class="language-python">my_strings_list = [&quot;comp sci&quot;, &quot;physics&quot;, &quot;elec engr&quot;, &quot;philosophy&quot;]
+print(my_strings_list)
+my_new_list = [&quot;art&quot;, &quot;econ&quot;]
+my_strings_list.append(my_new_list)
+print(my_strings_list)</code></pre></div>
+
+<p>The code above will result in the output below.</p>
+
+<div><pre><code class="language-none">$ python testing_practice.py 
+[&#39;comp sci&#39;, &#39;physics&#39;, &#39;elec engr&#39;, &#39;philosophy&#39;]
+[&#39;comp sci&#39;, &#39;physics&#39;, &#39;elec engr&#39;, &#39;philosophy&#39;, [&#39;art&#39;, &#39;econ&#39;]]</code></pre></div>
+
+<p>If you wanted to just add the elements in the new list to your list instead of as a list itself, then you can use the extend method.</p>
+
+<div><pre><code class="language-python">my_strings_list = [&quot;comp sci&quot;, &quot;physics&quot;, &quot;elec engr&quot;, &quot;philosophy&quot;]
+print(my_strings_list)
+my_new_list = [&quot;art&quot;, &quot;econ&quot;]
+my_strings_list.extend(my_new_list)
+print(my_strings_list)</code></pre></div>
+
+<p>The code above will result in the output below.</p>
+
+<div><pre><code class="language-none">$ python testing_practice.py 
+[&#39;comp sci&#39;, &#39;physics&#39;, &#39;elec engr&#39;, &#39;philosophy&#39;]
+[&#39;comp sci&#39;, &#39;physics&#39;, &#39;elec engr&#39;, &#39;philosophy&#39;, &#39;art&#39;, &#39;econ&#39;]</code></pre></div>
+
+<p>You can use indexing and slicing with lists just like with strings. Some examples below.</p>
+
+<div><pre><code class="language-python">my_list = [15, 6, 7, 8, 35, 12, 14, 4, 10, 15]
+print(my_list[0])   # this will return 15
+print(my_list[5])   # this will return 12
+print(my_list[4:])  # this will return a sublist from index 4 to the end
+print(my_list[1:5]) # this will return a sublist from index 1 to index 4
+                    # note: slice notation does not include the item at
+                    # the stopping index provided
+print(my_list[-1])  # this will return the last element of the list
+print(my_list[:])   # this will return a copy of the entire list
+print(my_list[::-1])    # this will return a reversed copy of the list
+print(sorted(my_list))  # this will return a sorted copy of the list
+print(my_list)      # original list un-altered, order is still the same
+my_list.sort()      # this will sort the list in-place
+print(my_list)      # now the list is in sorted order, original list order
+                    # has been changed by the sort() method
+</code></pre></div>
+
+<p>Since lists are mutable you are able to change elements within the list without needing to re-assign to a new list. An example of this is displayed in the code block above when the sort() method sorts the same list (my_list) in place. The order of the elements in the list are altered by this method.</p>
+
+<p>You can also use index notation to change elements in indices that you want, example below.</p>
+
+<div><pre><code class="language-python">my_strings_list = [&quot;comp sci&quot;, &quot;physics&quot;, &quot;elec engr&quot;, &quot;philosophy&quot;]
+my_strings_list[1] = &quot;art&quot; # this will place &quot;art&quot; in place of &quot;physics&quot;
+print(my_strings_list)</code></pre></div>
+
+<p>The code above will result in the output below.</p>
+
+<div><pre><code class="language-none">$ python testing_practice.py 
+[&#39;comp sci&#39;, &#39;art&#39;, &#39;elec engr&#39;, &#39;philosophy&#39;]</code></pre></div>
+
+<p>This concludes our introductory look at lists. We will work with lists a lot in the course and while programming with Python in general. A large portion of the algorithms section of the course is done using lists.</p>
+
+<p><a href="#toc">Back to table of contents</a>
+<br/>
+<br/>
+<br/></p>
+
+<h2 id="toc_17"><a name="dictionaries"></a>Dictionaries</h2>
+
+<p>Dictionaries are compound data types which are collections of key value pairs. An example dictionary is displayed below.</p>
+
+<div><pre><code class="language-python">my_dictionary = {&#39;name&#39;:&#39;john doe&#39;,&#39;course&#39;:&#39;python&#39;}</code></pre></div>
+
+<p>Documentation on dictionaries can be found here: <a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">https://docs.python.org/3/library/stdtypes.html#mapping-types-dict</a></p>
+
+<p>To access a value associated with a key in a dictionary you will need to provide the key associated with the value. For example in the example dictionary if you wanted the course name from the dictionary, you can use the code below.</p>
+
+<div><pre><code class="language-python">my_dictionary = {&#39;name&#39;:&#39;john doe&#39;,&#39;course&#39;:&#39;python&#39;}
+print(my_dictionary[&#39;course&#39;]) # this will print python</code></pre></div>
+
+<p>Dictionaries can take various forms, all 3 below are valid dictionaries.</p>
+
+<div><pre><code class="language-python">my_dictionary = {&#39;name&#39;: &#39;mashrur&#39;, &#39;course&#39;: &#39;python&#39;, &#39;fav_food&#39;: &#39;ice cream&#39;}
+phone_dict = {&#39;mashrur&#39;: &#39;555-55-5555&#39;,
+              &#39;zoolander&#39;: &#39;999-99-9999&#39;,
+              &#39;jon_snow&#39;: &#39;fail-o-so-bad&#39;}
+word_dict = {&#39;a&#39;:
+                {
+                 &#39;apple&#39;: &#39;the round fruit of a tree of the rose family&#39;,
+                 &#39;ant&#39;: &#39;an insect which cleans up the floor&#39;
+                },
+             &#39;b&#39;:
+                {
+                 &#39;bad&#39;: &#39;of poor quaity or low standard&#39;,
+                 &#39;business&#39;: &#39;season 8 of GOT&#39;
+                }
+            }
+print(my_dictionary)
+print(phone_dict)
+print(word_dict)</code></pre></div>
+
+<p>You can have other data types and objects as the values in dictionaries. It is good practice to keep the keys as immutable data types like strings and integers so they cannot be altered.</p>
+
+<p>You can re-assign the value associated with a key by using the key. For example in if you wanted to change the name from &lsquo;mashrur&rsquo; to &lsquo;john&rsquo; in my_dictionary above, you can use the code below.</p>
+
+<div><pre><code class="language-python">my_dictionary[&#39;name&#39;] = &#39;john&#39; # this will re-assign &#39;mashrur&#39; to &#39;john&#39;
+print(my_dictionary)</code></pre></div>
+
+<p>You can add new key, value pairs to the dictionary with the same notation. Example below.</p>
+
+<div><pre><code class="language-python">my_dictionary[&#39;job&#39;] = &#39;python programmer&#39;
+print(my_dictionary)</code></pre></div>
+
+<p>If you run the code above, the new key &lsquo;job&rsquo; and value &lsquo;python programmer&rsquo; would be added to the dictionary like below.</p>
+
+<div><pre><code class="language-none">$ python lecture_dicts.py 
+{&#39;name&#39;: &#39;john&#39;, &#39;course&#39;: &#39;python&#39;, &#39;fav_food&#39;: &#39;ice cream&#39;, &#39;job&#39;: &#39;python programmer&#39;} </code></pre></div>
+
+<p>You can go deeper into dictionaries by providing keys followed by other keys in cases where you have dictionaries within dictionaries. Take the word_dict below as an example. To access the value associated with business, you can use the following code <code>word_dict[&#39;b&#39;][&#39;business&#39;]</code> like below.</p>
+
+<div><pre><code class="language-python">word_dict = {&#39;a&#39;:
+                {
+                 &#39;apple&#39;: &#39;the round fruit of a tree of the rose family&#39;,
+                 &#39;ant&#39;: &#39;an insect which cleans up the floor&#39;
+                },
+             &#39;b&#39;:
+                {
+                 &#39;bad&#39;: &#39;of poor quaity or low standard&#39;,
+                 &#39;business&#39;: &#39;season 8 of GOT&#39;
+                }
+            }
+
+print(word_dict[&#39;b&#39;][&#39;business&#39;]) # this will print season 8 of GOT</code></pre></div>
+
+<p>Some methods you can use to get keys, values and key, value pairs as an iterable are shown below.</p>
+
+<div><pre><code class="language-python">my_dictionary = {&#39;name&#39;: &#39;john&#39;, &#39;course&#39;: &#39;python&#39;, &#39;fav_food&#39;: &#39;ice cream&#39;, &#39;job&#39;: &#39;python programmer&#39;}
+ 
+print(my_dictionary.keys()) # this will print all the keys in the dictionary
+print(my_dictionary.values()) # this will print all the values
+print(my_dictionary.items()) # this will print all the key, value pairs</code></pre></div>
+
+<p>If you run the code above, you will get the output below.</p>
+
+<div><pre><code class="language-none">$ python lecture_dicts.py 
+dict_keys([&#39;name&#39;, &#39;course&#39;, &#39;fav_food&#39;, &#39;job&#39;])
+dict_values([&#39;john&#39;, &#39;python&#39;, &#39;ice cream&#39;, &#39;python programmer&#39;])
+dict_items([(&#39;name&#39;, &#39;john&#39;), (&#39;course&#39;, &#39;python&#39;), (&#39;fav_food&#39;, &#39;ice cream&#39;), (&#39;job&#39;, &#39;python programmer&#39;)])</code></pre></div>
+
+<p>The items() method returns an iterable which you can iterate through to get the key, value combos one by one. To iterate through the dictionary using items() you can use a simply for loop like below.</p>
+
+<div><pre><code class="language-python">my_dictionary = {&#39;name&#39;: &#39;john&#39;, &#39;course&#39;: &#39;python&#39;, &#39;fav_food&#39;: &#39;ice cream&#39;, &#39;job&#39;: &#39;python programmer&#39;}
+for key, value in my_dictionary.items():
+    print(f&#39;Key: {key}, Value: {value}&#39;)</code></pre></div>
+
+<p>Running the code above will give you the following output.</p>
+
+<div><pre><code class="language-none">$ python lecture_dicts.py 
+Key: name, Value: john
+Key: course, Value: python
+Key: fav_food, Value: ice cream
+Key: job, Value: python programmer</code></pre></div>
+
+<p>This concludes our introductory look at Dictionaries. Dictionaries are a staple of Python and used a lot. In the data structures section of the course we will build our own dictionary data structure from scratch. </p>
+
+<p><a href="#toc">Back to table of contents</a>
+<br/>
+<br/>
+<br/></p>
+
+<h2 id="toc_18"><a name="sets"></a>Sets</h2>
+
+<p>Sets are un-ordered collections of objects which don&rsquo;t allow duplicates. An example set is shown below.</p>
+
+<div><pre><code class="language-python">my_set = {1,6,2,&#39;java&#39;,&#39;ruby&#39;,8,9,10,21,1000,&#39;python&#39;}</code></pre></div>
+
+<p>Since sets don&rsquo;t allow duplicated, if you tried to create the same set above with an additional duplicate 6, it would simply discard the duplicate. Example below.</p>
+
+<div><pre><code class="language-python">my_set = {1,6,2,&#39;java&#39;,&#39;ruby&#39;,8,9,10,21,1000,&#39;python&#39;,6}
+print(my_set) # duplicate 6 will be discarded </code></pre></div>
+
+<p>Documentation on sets can be found here: <a href="https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset">https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset</a></p>
+
+<p>Sets are useful in a lot of ways. One use can be if you have a list with duplicates and you wanted to get rid of the duplicates. You can cast it to a set to get rid of duplicates.</p>
+
+<div><pre><code class="language-python">my_list = [1,6,2,&#39;java&#39;,&#39;ruby&#39;,8,9,10,21,1000,6,&#39;python&#39;,&#39;java&#39;]
+print(my_list)
+my_set = set(my_list)
+print(my_set)
+# you can cast my_set back to a list if you wanted a list as output</code></pre></div>
+
+<p>You can find information in sets using &lsquo;in&rsquo;. Example below.</p>
+
+<div><pre><code class="language-python">my_set = {1,6,2,&#39;java&#39;,&#39;ruby&#39;,8,9,10,21,1000,&#39;python&#39;}
+print(&#39;java&#39; in my_set) # this will return True
+print(&#39;javascript&#39; in my_set) # this will return False</code></pre></div>
+
+<p>Sets are optimized to perform mathematical operations like finding unions, intersections, differences etc. Some examples using these methods are shown below.</p>
+
+<div><pre><code class="language-python">my_set = {1,6,2,&#39;java&#39;,&#39;ruby&#39;,8,9,10,21,1000,&#39;python&#39;}
+programming_set = {&#39;java&#39;,&#39;ruby&#39;,&#39;javascript&#39;,&#39;python&#39;,&#39;c&#39;}
+print(my_set.intersection(programming_set)) # elements in common in both sets
+print(my_set.union(programming_set)) # all elements in both, no duplicates
+print(my_set.difference(programming_set)) # in my_set, not in other
+print(programming_set.difference(my_set)) # in programming_set, not in my_set</code></pre></div>
+
+<p>If you run the code above, it will give you the output below.</p>
+
+<div><pre><code class="language-none">$ python lecture_sets.py 
+{&#39;python&#39;, &#39;ruby&#39;, &#39;java&#39;}
+{1, 2, 6, 8, 9, 10, &#39;python&#39;, &#39;c&#39;, 21, &#39;javascript&#39;, &#39;ruby&#39;, 1000, &#39;java&#39;}
+{1, 2, 6, 8, 9, 10, 1000, 21}
+{&#39;javascript&#39;, &#39;c&#39;}</code></pre></div>
+
+<p>You can iterate through items in a set using a simple for loop, example below.</p>
+
+<div><pre><code class="language-python">my_set = {1,6,2,&#39;java&#39;,&#39;ruby&#39;,8,9,10,21,1000,&#39;python&#39;}
+for item in my_set:
+    print(item)</code></pre></div>
+
+<p>This concludes our introductory look at Sets. We will look at Tuples in the next chapter. </p>
+
+<p><a href="#toc">Back to table of contents</a>
+<br/>
+<br/>
+<br/></p>
+
+<h2 id="toc_19"><a name="tuples"></a>Tuples</h2>
+
+<p>Tuples are immutable collections of objects which are indexed, which means they maintain order. Tuples behave a lot like lists except for the key fact that they are immutable unlike lists. So you cannot update an object inside a tuple, you have to use a new tuple. A tuple may look like the example below.</p>
+
+<div><pre><code class="language-python">my_tuple = (&#39;hello&#39;,&#39;world&#39;,&#39;night&#39;,&#39;king&#39;,&#39;says&#39;,&#39;bye&#39;,8,3)</code></pre></div>
+
+<p>Documentation on tuples can be found here: <a href="https://docs.python.org/3/library/stdtypes.html#tuple">https://docs.python.org/3/library/stdtypes.html#tuple</a></p>
+
+<p>You can use indexing and slicing notation to access objects or sublists of tuples like the example below.</p>
+
+<div><pre><code class="language-python">my_random_tuple = (&#39;first&#39;,1,7,6,4,5,8,&#39;hi there&#39;,2,3,1,5,2,1,9,10)
+print(my_random_tuple[7])
+print(my_random_tuple[7:])</code></pre></div>
+
+<p>Running the code above will give you the output below.</p>
+
+<div><pre><code class="language-none">$ python lecture_tuples.py 
+hi there
+(&#39;hi there&#39;, 2, 3, 1, 5, 2, 1, 9, 10)</code></pre></div>
+
+<p>You can &lsquo;unpack&rsquo; the elements in a tuple by using tuple unpacking</p>
+
+<div><pre><code class="language-python">my_tuple = (&#39;first_value&#39;,&#39;second_value&#39;,&#39;third_value&#39;)
+first, second, third = my_tuple # this line is &#39;unpacking&#39; the 
+                                # values of the tuple
+print(f&quot;First value: {first}\nSecond value: {second}\nThird value: {third}&quot;)</code></pre></div>
+
+<p>Tuple unpacking is very useful when you receive tuples as return values from functions which need to return multiple values. You will see examples of this in the functions chapter as well. The code above (using tuple unpacking) allows you to access individual pieces of the tuple to work with. Running it will give you the output below.</p>
+
+<div><pre><code class="language-none">$ python lecture_tuples.py 
+First value: first_value
+Second value: second_value
+Third value: third_value</code></pre></div>
+
+<p>You can find out if an object exists in your tuple using &lsquo;in&rsquo;.</p>
+
+<div><pre><code class="language-python">my_random_tuple = (&#39;first&#39;,1,7,6,4,5,8,&#39;hi there&#39;,2,3,1,5,2,1,9,10)
+print(&#39;hi there&#39; in my_random_tuple) # this will return True</code></pre></div>
+
+<p>You can iterate through the objects in a tuple using a simple for loop just like lists.</p>
+
+<div><pre><code class="language-python">my_random_tuple = (&#39;first&#39;,1,7,6,4,5,8,&#39;hi there&#39;,2,3,1,5,2,1,9,10)
+for item in my_random_tuple:
+    print(item)</code></pre></div>
+
+<p>Try running the index and count methods, along with the len function on the tuples defined above.</p>
+
+<p>This concludes our introductory look at Tuples. We will look at iterators in the next chapter.</p>
+
+<p><a href="#toc">Back to table of contents</a>
+<br/>
+<br/>
+<br/></p>
+
+<h2 id="toc_20"><a name="forloops"></a>For loops and generators</h2>
+
+<p>You can use for loops to iterate through iterables. Iterables can be collections of objects like lists, dictionaries, sets. They can also be sequences like strings. </p>
+
+<p>Let&rsquo;s look at using a simple for loop to iterate through the elements in the list below.</p>
+
+<div><pre><code class="language-python">l = [6, 8, 1, 4, 10, 7, 8, 9, 3, 2, 5]
+
+for num in l:
+    print(num)</code></pre></div>
+
+<p>You can perform functions like calculating the sum of all the integers in that list like below:</p>
+
+<div><pre><code class="language-python">l = [6, 8, 1, 4, 10, 7, 8, 9, 3, 2, 5]
+
+sum = 0
+for num in l:
+    sum += num
+print(f&quot;Sum using list: {sum}&quot;)</code></pre></div>
+
+<p>To iterate through key, value pairs in a dictionary, you can use the items method. It returns tuples of key, value pairs which you can iterate through and perform any function necessary. An example of using this along with a for loop is shown below. The &lsquo;unpacking&rsquo; for the key, value pair from each tuple takes place in the for loop declaration itself (for k, v in&hellip;).</p>
+
+<div><pre><code class="language-python">my_dict = {&#39;py&#39;: &#39;python&#39;, &#39;rb&#39;: &#39;ruby&#39;, &#39;js&#39;: &#39;javascript&#39;}
+for k, v in my_dict.items():
+    print(f&quot;Extension of .{k} means it&#39;s a {v} program&quot;)</code></pre></div>
+
+<h3 id="toc_21">Generators and Iterables</h3>
+
+<p>You can also use the range function to generate an iterable of a specific number, then use a for loop to run that many times as you look at the elements in the index generated like below.</p>
+
+<div><pre><code class="language-python">l = [6, 8, 1, 4, 10, 7, 8, 9, 3, 2, 5]
+
+sum = 0
+for num in range(len(l)):
+    sum += l[num]
+print(f&quot;Sum using range generator: {sum}&quot;)</code></pre></div>
+
+<p>Range is a very useful function to use if you don&rsquo;t know ahead of time the number of iterations by the for loop to take place, example below where input from the user is used to define this number.</p>
+
+<div><pre><code class="language-python">run_times = int(input(&quot;How many times do you want the program to run? &quot;))
+for num in range(run_times):
+    print(f&quot;Run: {num+1}&quot;)</code></pre></div>
+
+<p>You can generate a list of random integers using the range function
+in combination with the randint function from the random module like below.</p>
+
+<div><pre><code class="language-python">from random import randint
+l1 = []
+for num in range(25):
+    l1.append(randint(1, 100))</code></pre></div>
+
+<p>You can do the same function above using <strong>list comprehension</strong> in 1 line as shown below.</p>
+
+<div><pre><code class="language-python">from random import randint
+l1 = [randint(1,100) for num in range(25)]</code></pre></div>
+
+<p>Another generator which is very useful is the zip function. The zip function is used quite often to merge values from two lists together to form an iterable of tuple values. It can cast to a list and printed out to show the merged list of tuples. An example is shown below.</p>
+
+<div><pre><code class="language-python">l1 = [&#39;.py&#39;,&#39;.js&#39;,&#39;.rb&#39;,&#39;.java&#39;,&#39;.c&#39;]
+l2 = [&#39;python&#39;,&#39;javascript&#39;,&#39;ruby&#39;,&#39;java&#39;,&#39;c&#39;]
+tupled_list = list(zip(l2, l1))
+print(tupled_list)</code></pre></div>
+
+<p>If you ran the code above, it would result in the output below.</p>
+
+<div><pre><code class="language-none">$ python lecture_forloops.py 
+[(&#39;python&#39;, &#39;.py&#39;), (&#39;javascript&#39;, &#39;.js&#39;), (&#39;ruby&#39;, &#39;.rb&#39;), (&#39;java&#39;, &#39;.java&#39;), (&#39;c&#39;, &#39;.c&#39;)]</code></pre></div>
+
+<p>If one list is bigger than the other, the unmatched items are
+simply ignored, for example if l2 looked like below:</p>
+
+<div><pre><code class="language-python">l2 = [&#39;python&#39;,&#39;javascript&#39;,&#39;ruby&#39;,&#39;java&#39;,&#39;c&#39;,&#39;c++&#39;]</code></pre></div>
+
+<p>And we ran the same code we did, <code>c++</code> would be dropped and not included in any of the tuples, output displayed below.</p>
+
+<div><pre><code class="language-none">$ python lecture_forloops.py 
+[(&#39;python&#39;, &#39;.py&#39;), (&#39;javascript&#39;, &#39;.js&#39;), (&#39;ruby&#39;, &#39;.rb&#39;), (&#39;java&#39;, &#39;.java&#39;), (&#39;c&#39;, &#39;.c&#39;)]</code></pre></div>
+
+<p>This concludes our introductory look at iterators with for loops and generators. We will look at while loops in the next chapter.</p>
+
+<p><a href="#toc">Back to table of contents</a>
+<br/>
+<br/>
+<br/></p>
+
+<h2 id="toc_22"><a name="whileloops"></a>While loops</h2>
+
+<p>You can use a simple while loop with a conditional test that
+evaluates to either <code>True</code> or <code>False</code> (or the boolean directly) and the code within the block will keep running while the condition is true. The while loop will only stop when either the condition evaluation turns to false or a <code>break</code> keyword is used within the code block. An example of a while loop is shown below.</p>
+
+<div><pre><code class="language-python">x = 0
+while x &lt; 10:
+    print(x)
+    x += 1</code></pre></div>
+
+<p>The while loop above will print values 0 through 9 and stop when
+x reaches value of 10. At that point the condition <code>x &lt; 10</code> will
+be false since <code>10 &lt; 10</code> is false and it will exit out of the
+while loop.</p>
+
+<p>The example below shows the usage of a while loop to find a number in a generated list of numbers and the index at which it was found.</p>
+
+<div><pre><code class="language-python">from random import randint
+l1 = [randint(1,100) for num in range(1000)] # generated list of numbers
+i = 0
+num_to_search = 25  # the number to search
+while i &lt; len(l1):  # while loop won&#39;t run beyond the total number of 
+                    # ints in the list
+    if l1[i] == num_to_search:
+        print(f&quot;{num_to_search} found at index {i}&quot;)
+        break   # if the number is found, break out of nearest loop
+    i += 1</code></pre></div>
+
+<p>The break keyword above breaks out of the nearest loop it is in (it happens to be the while loop in this case). If there are nested loops and you want to find which loop the break keyword will break out of, then look for the nearest for/while loop above the break statement.</p>
+
+<p>Notice in the code above how we used the variable i to track the index in the list (by initially setting it to 0 and incrementing it at every iteration). You can simplify this and use the enumerate function instead to get the index in an iteration through an iterable. </p>
+
+<p>For example if you ran the same code above with a for loop without tracking i, you can use enumerate like below:</p>
+
+<div><pre><code class="language-python">l1 = [randint(1,100) for num in range(1000)]
+num_to_search = 50
+for index, value in enumerate(l1):
+    if value == num_to_search:
+        print(f&quot;{num_to_search} found at index {index}&quot;)
+        break</code></pre></div>
+
+<p>While loops are most useful when you don&rsquo;t know when the program
+execution will end. An example would be in a program where a user clicks on an exit button to exit the program and thus stops the loop execution like in case of a menu shown below:</p>
+
+<div><pre><code class="language-python">while True:
+    print(&quot;Please choose an option from the list below:&quot;)
+    print(&quot;Press 1 for selection 1&quot;)
+    print(&quot;Press 2 for selection 2&quot;)
+    print(&quot;Press 3 to quit&quot;)
+    selection = input(&quot;Enter your choice-&gt; &quot;)
+    if int(selection) == 3:
+        break</code></pre></div>
+
+<p>This concludes our introductory look at while loops. In the next chapter we will start looking at building our own custom functions.</p>
+
+<p><a href="#toc">Back to table of contents</a>
+<br/>
+<br/>
+<br/></p>
+
+<h2 id="toc_23"><a name="functions"></a>Functions</h2>
+
+<p>You can build custom functions in Python using the <code>def</code> keyword followed by the name of the function. Functions may or may not take in arguments/parameters to process. A basic function example is provided below which does not take any arguments (no code within the open and close parenthesis after the function name).</p>
+
+<div><pre><code class="language-python">def say_hello():
+    print(&#39;Hello World!&#39;)</code></pre></div>
+
+<p>Functions by themselves are simply objects which are recognized by the python interpreter as functions when a script including them is executed. The code block inside the function is not executed by default. To actually run the code inside functions, they have to be called. For example, to run the function say_hello() defined above the following code could be used.</p>
+
+<div><pre><code class="language-python">def say_hello():
+    print(&#39;Hello World!&#39;)
+
+say_hello() # this line calls the function</code></pre></div>
+
+<p>Running the code above would result in the output below.</p>
+
+<div><pre><code class="language-none">$ python lecture_functions.py 
+Hello World!</code></pre></div>
+
+<p>Functions can take arguments as parameters to use within their function code. The following function uses 2 parameters to perform the add operation defined within it. As a result, two numbers (strings will work too) will need to be provided as arguments when the function is called</p>
+
+<div><pre><code class="language-python">def add_two_nums(num_1, num_2): # takes two arguments num_1 and num_2
+    print(num_1 + num_2)
+
+add_two_nums(4, 5) # 4 and 5 are provided in the function call</code></pre></div>
+
+<p>Functions usually return a value that they evaluate. In the example above, instead of printing out the summed value of the two numbers, the function can be made to return the value. This is done using the keyword return followed by the value. If nothing is specified by the explicit use of the return keyword, then the None datatype is returned by default by all functions to the caller of the function.</p>
+
+<div><pre><code class="language-python">def add_two_nums(num_1, num_2):
+    return num_1 + num_2
+
+my_added_num = add_two_nums(4,5) # The return value from the function
+                                # call is being assigned to my_added_num
+print(my_added_num)             # printing out value of my_added_num</code></pre></div>
+
+<p>We can do this without the variable <code>my_added_num</code> above.</p>
+
+<div><pre><code class="language-python">print(add_two_nums(4,5))</code></pre></div>
+
+<p>Notice how we used the print function in the above examples to print out the value received from the function call. If we try to print the value of a function call that returns <code>None</code>, meaning no return value was specified, then it prints None to the screen.</p>
+
+<div><pre><code class="language-python">def say_hello():
+    print(&#39;Hello World!&#39;)
+
+print(say_hello())</code></pre></div>
+
+<p>The code above will result in <code>Hello World!</code> being printed to the screen due to the code inside the function, followed by <code>None</code>, which is the return value from the function. </p>
+
+<p>Output below.</p>
+
+<div><pre><code class="language-none">$ python lecture_functions.py 
+Hello World!
+None</code></pre></div>
+
+<p>You can use doctstrings inside functions to provide information about them. They are created using triple-quoted strings. An example docstring is shown below.</p>
+
+<div><pre><code class="language-python">def say_hello():
+    &quot;&quot;&quot;This function prints Hello World! to the screen&quot;&quot;&quot;
+    print(&#39;Hello World!&#39;)</code></pre></div>
+
+<p>Docstrings can be very detailed as well.</p>
+
+<div><pre><code class="language-python">def add_two_nums(num_1, num_2):
+    &quot;&quot;&quot;
+    This function adds two objects
+    Input: Two objects to add, num_1 and num_2
+    Output: The value of the two objects added together
+    &quot;&quot;&quot;
+    return num_1 + num_2</code></pre></div>
+
+<p>When a function returns multiple values separated by commas in its return statement, these values are returned as tuples which can then be unpacked and used.</p>
+
+<p>In the functions video in the course a step by step example is shown on converting repeated/duplicate code and logic in a script to a function, clearning up the code. That example code is shown below, initially the starter code in the script followed by the &lsquo;extracted&rsquo; logic code using a function.</p>
+
+<div><pre><code class="language-python"># Initial code
+print(&quot;Welcome to the program, what is your name?&quot;)
+name_result = input(&quot;Enter your response here -&gt; &quot;)
+print(f&quot;Your response was {name_result}&quot;)
+
+print(&quot;What did you think of the food you ate today?&quot;)
+food_result = input(&quot;Enter your response here -&gt; &quot;)
+print(f&quot;Your response was {food_result}&quot;)
+
+print(&quot;What tv show ending did you dislike the most ever?&quot;)
+show_result = input(&quot;Enter your response here -&gt; &quot;)
+print(f&quot;Your response was {show_result}&quot;)</code></pre></div>
+
+<p><br/></p>
+
+<div><pre><code class="language-python"># Final code using a function
+def get_input_from_user():
+    return input(&quot;Enter your response here -&gt; &quot;)
+
+print(&quot;Welcome to the program, what is your name?&quot;)
+name_result = get_input_from_user()
+
+print(&quot;What did you think of the food you ate today?&quot;)
+food_result = get_input_from_user()
+
+print(&quot;What tv show ending did you dislike the most ever?&quot;)
+show_result = get_input_from_user()
+
+print(f&quot;To summarize: Your name is {name_result.capitalize()},\
+ you ate {food_result} food today and hated the ending\
+ of {show_result.upper()}&quot;)</code></pre></div>
+
+<p>This concludes our introductory look at functions. We will use custom-built functions a lot in this course and get a lot of practice in the process. In the next chapter we will start looking at creating custom objects in python using classes.</p>
+
+<p><a href="#toc">Back to table of contents</a>
+<br/>
+<br/>
+<br/></p>
+
+<h2 id="toc_24"><a name="classes"></a>Classes</h2>
+
+<p>You can create a custom object in Python by creating a class. In the course videos we create a custom Student class, at a minimum you can define it like below.</p>
+
+<div><pre><code class="language-python">class Student:
+    pass</code></pre></div>
+
+<p>The pass keyword indicates our intention to fill in code for the class later on.</p>
+
+<p>We can create instances of the class, or instances of student objects by calling the class name followed by parenthesis <code>()</code> like below:</p>
+
+<div><pre><code class="language-python">mashrur = Student()
+john = Student()</code></pre></div>
+
+<p>Note: In the code above <code>mashrur</code> and <code>john</code> are separate instances of students. They are not the same object but are both type student (same class).</p>
+
+<p>We want our student class to have attributes of first<em>name, last</em>name and eventually courses. You can add attributes to your objects like below. </p>
+
+<div><pre><code class="language-python">mashrur.first_name = &#39;mashrur&#39;
+mashrur.last_name = &#39;hossain&#39;
+john.first_name = &#39;john&#39;
+john.last_name = &#39;doe&#39;</code></pre></div>
+
+<p>Once you have written the code above, you can access the attributes associated with each student object like below.</p>
+
+<div><pre><code class="language-python">print(mashrur.first_name, mashrur.last_name)
+print(john.first_name, john.last_name)</code></pre></div>
+
+<p>You can use the special <code>__init__()</code> method to assign the attributes
+when the instance of the object is created instead of assigning them as shown in the code above. </p>
+
+<p>The init method takes a default first argument which is called <code>self</code> by convention in python. <code>self</code> is the object being created itself, followed by any other attributes you wish to initialize when the object is created. </p>
+
+<p>In the video we modified the class like below to reflect setting up first<em>name, last</em>name and courses attributes followed by some execution code at the bottom so we could test it out.</p>
+
+<div><pre><code class="language-python">class Student:
+
+    def __init__(self, first, last, courses=None):
+        self.first_name = first
+        self.last_name = last
+        if courses == None:
+            self.courses = []
+        else:
+            self.courses = courses
+
+courses_1 = [&#39;python&#39;,&#39;rails&#39;,&#39;javascript&#39;]
+courses_2 = [&#39;java&#39;,&#39;rails&#39;,&#39;c&#39;]
+mashrur = Student(&#39;mashrur&#39;,&#39;hossain&#39;,courses_1)
+john = Student(&#39;john&#39;,&#39;doe&#39;,courses_2)
+print(mashrur.first_name, mashrur.last_name, mashrur.courses)
+print(john.first_name, john.last_name, john.courses)</code></pre></div>
+
+<p>Running the code above will give you the following output.</p>
+
+<div><pre><code class="language-none">$ python lecture_objects.py 
+mashrur hossain [&#39;python&#39;, &#39;rails&#39;, &#39;javascript&#39;]
+john doe [&#39;java&#39;, &#39;rails&#39;, &#39;c&#39;]</code></pre></div>
+
+<h3 id="toc_25">Adding methods to the student class</h3>
+
+<p>You can add methods to your Student class. Regular methods look and feel almost the same as functions except they take self as an argument as well. In the Student class, the add and remove course methods were added in the course videos.
+The class looked like below once they were added, along with some execution code. </p>
+
+<div><pre><code class="language-python">class Student:
+
+    def __init__(self, first, last, courses=None):
+        self.first_name = first
+        self.last_name = last
+        if courses == None:
+            self.courses = []
+        else:
+            self.courses = courses
+
+    def add_course(self, course):
+        if course not in self.courses:
+            self.courses.append(course)
+        else:
+            print(f&quot;{self.first_name} is already \
+enrolled in the {course} course&quot;)
+
+    def remove_course(self, course):
+        if course in self.courses:
+            self.courses.remove(course)
+        else:
+            print(f&quot;{course} not found&quot;)
+
+courses_1 = [&#39;python&#39;,&#39;rails&#39;,&#39;javascript&#39;]
+courses_2 = [&#39;java&#39;,&#39;rails&#39;,&#39;c&#39;]
+mashrur = Student(&#39;mashrur&#39;,&#39;hossain&#39;,courses_1)
+john = Student(&#39;john&#39;,&#39;doe&#39;,courses_2)
+print(mashrur.first_name, mashrur.last_name, mashrur.courses)
+print(john.first_name, john.last_name, john.courses)
+print(&quot;Courses added to students&quot;)
+mashrur.add_course(&#39;c&#39;)
+john.add_course(&#39;c++&#39;)
+print(mashrur.first_name, mashrur.last_name, mashrur.courses)
+print(john.first_name, john.last_name, john.courses)
+print(&quot;Courses removed from students&quot;)
+mashrur.remove_course(&#39;rails&#39;)
+john.remove_course(&#39;java&#39;)
+print(mashrur.first_name, mashrur.last_name, mashrur.courses)
+print(john.first_name, john.last_name, john.courses)</code></pre></div>
+
+<p>Running the code above results in the following output.</p>
+
+<div><pre><code class="language-none">$ python lecture_objects.py 
+mashrur hossain [&#39;python&#39;, &#39;rails&#39;, &#39;javascript&#39;]
+john doe [&#39;java&#39;, &#39;rails&#39;, &#39;c&#39;]
+Courses added to students
+mashrur hossain [&#39;python&#39;, &#39;rails&#39;, &#39;javascript&#39;, &#39;c&#39;]
+john doe [&#39;java&#39;, &#39;rails&#39;, &#39;c&#39;, &#39;c++&#39;]
+Courses removed from students
+mashrur hossain [&#39;python&#39;, &#39;javascript&#39;, &#39;c&#39;]
+john doe [&#39;rails&#39;, &#39;c&#39;, &#39;c++&#39;]</code></pre></div>
+
+<h3 id="toc_26">Adding special methods to the student class</h3>
+
+<p>You have already seen the <code>__init__()</code> special method we used earlier which gets called when a new object of the class is created.  There are other special methods as well. For the Student class videos we explored the <code>__str__()</code> special method to get a string
+representation of the Student object, we also added the <code>__len__()</code>
+and <code>__repr__()</code> methods. </p>
+
+<p><code>__len__()</code> gives you the ability to display what you want when the len function is run with the object you are working with as the argument. </p>
+
+<p><code>__repr__()</code> is also a string representation of the class but it&rsquo;s meant more for other developers and not users of your program. <code>__repr__()</code> is usually supposed to display how to create an instance of the class in question, it also has the characteristic that it will be called to get a string representation of the class if <code>__str__()</code> is not present.</p>
+
+<p>At the conclusion of adding these special methods, the Student class looked like below.</p>
+
+<div><pre><code class="language-python">class Student:
+
+    def __init__(self, first, last, courses=None):
+        self.first_name = first
+        self.last_name = last
+        if courses == None:
+            self.courses = []
+        else:
+            self.courses = courses
+
+    def add_course(self, course):
+        if course not in self.courses:
+            self.courses.append(course)
+        else:
+            print(f&quot;{self.first_name} is already \
+enrolled in the {course} course&quot;)
+
+    def remove_course(self, course):
+        if course in self.courses:
+            self.courses.remove(course)
+        else:
+            print(f&quot;{course} not found&quot;)
+
+    def __len__(self):
+        return len(self.courses)
+
+    def __repr__(self):
+        return f&quot;Student(&#39;{self.first_name}&#39;,&#39;{self.last_name}&#39;,{self.courses})&quot;
+
+    def __str__(self):
+        return f&quot;First name: {self.first_name.capitalize()}\nLast name: {self.last_name.capitalize()}\
+        \nCourses: {&#39;, &#39;.join(map(str.capitalize, self.courses))}&quot;
+
+
+courses_1 = [&#39;python&#39;,&#39;rails&#39;,&#39;javascript&#39;]
+courses_2 = [&#39;java&#39;,&#39;rails&#39;,&#39;c&#39;]
+mashrur = Student(&#39;mashrur&#39;,&#39;hossain&#39;,courses_1)
+john = Student(&#39;john&#39;,&#39;doe&#39;,courses_2)
+print(mashrur)
+print(john)
+print(f&quot;{mashrur.first_name.capitalize()} is enrolled in {len(mashrur)} courses&quot;)
+print(f&quot;{john.first_name.capitalize()} is enrolled in {len(john)} courses&quot;)</code></pre></div>
+
+<p>At this point in the course videos we explored adding the ability to work with files (persistent memory), then we explored two other topics with static methods and inheritance. These are best explained with demonstrations in the videos themselves so I recommend checking them out. The text lectures provided with the videos include code used in them as well. </p>
+
+<p>This concludes our introductory look at the Python programming language. I hope you enjoyed this e-book and found the content useful. We will use concepts we learnt here heavily through the rest of the course so you will get a lot of opportunity to practice programming concepts with Python. I look forward to working with you through the rest of the course starting with the sorting Algorithms section.</p>
+
+<p><a href="#toc">Back to table of contents</a>
+<br/>
+<br/>
+<br/></p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.python={"triple-quoted-string":{pattern:/"""[\s\S]+?"""|'''[\s\S]+?'''/,alias:"string"},comment:{pattern:/(^|[^\\])#.*/,lookbehind:!0},string:/("|')(?:\\?.)*?\1/,"function":{pattern:/((?:^|\s)def[ \t]+)[a-zA-Z_][a-zA-Z0-9_]*(?=\()/g,lookbehind:!0},"class-name":{pattern:/(\bclass\s+)[a-z0-9_]+/i,lookbehind:!0},keyword:/\b(?:as|assert|async|await|break|class|continue|def|del|elif|else|except|exec|finally|for|from|global|if|import|in|is|lambda|pass|print|raise|return|try|while|with|yield)\b/,"boolean":/\b(?:True|False)\b/,number:/\b-?(?:0[bo])?(?:(?:\d|0x[\da-f])[\da-f]*\.?\d*|\.\d+)(?:e[+-]?\d+)?j?\b/i,operator:/[-+%=]=?|!=|\*\*?=?|\/\/?=?|<[<=>]?|>[=>]?|[&|^~]|\b(?:or|and|not)\b/,punctuation:/[{}[\];(),.:]/};
+</script>
+
+<script type="text/javascript">
+!function(e){var t={variable:[{pattern:/\$?\(\([\w\W]+?\)\)/,inside:{variable:[{pattern:/(^\$\(\([\w\W]+)\)\)/,lookbehind:!0},/^\$\(\(/],number:/\b-?(?:0x[\dA-Fa-f]+|\d*\.?\d+(?:[Ee]-?\d+)?)\b/,operator:/--?|-=|\+\+?|\+=|!=?|~|\*\*?|\*=|\/=?|%=?|<<=?|>>=?|<=?|>=?|==?|&&?|&=|\^=?|\|\|?|\|=|\?|:/,punctuation:/\(\(?|\)\)?|,|;/}},{pattern:/\$\([^)]+\)|`[^`]+`/,inside:{variable:/^\$\(|^`|\)$|`$/}},/\$(?:[a-z0-9_#\?\*!@]+|\{[^}]+\})/i]};e.languages.bash={shebang:{pattern:/^#!\s*\/bin\/bash|^#!\s*\/bin\/sh/,alias:"important"},comment:{pattern:/(^|[^"{\\])#.*/,lookbehind:!0},string:[{pattern:/((?:^|[^<])<<\s*)(?:"|')?(\w+?)(?:"|')?\s*\r?\n(?:[\s\S])*?\r?\n\2/g,lookbehind:!0,inside:t},{pattern:/(["'])(?:\\\\|\\?[^\\])*?\1/g,inside:t}],variable:t.variable,"function":{pattern:/(^|\s|;|\||&)(?:alias|apropos|apt-get|aptitude|aspell|awk|basename|bash|bc|bg|builtin|bzip2|cal|cat|cd|cfdisk|chgrp|chmod|chown|chroot|chkconfig|cksum|clear|cmp|comm|command|cp|cron|crontab|csplit|cut|date|dc|dd|ddrescue|df|diff|diff3|dig|dir|dircolors|dirname|dirs|dmesg|du|egrep|eject|enable|env|ethtool|eval|exec|expand|expect|export|expr|fdformat|fdisk|fg|fgrep|file|find|fmt|fold|format|free|fsck|ftp|fuser|gawk|getopts|git|grep|groupadd|groupdel|groupmod|groups|gzip|hash|head|help|hg|history|hostname|htop|iconv|id|ifconfig|ifdown|ifup|import|install|jobs|join|kill|killall|less|link|ln|locate|logname|logout|look|lpc|lpr|lprint|lprintd|lprintq|lprm|ls|lsof|make|man|mkdir|mkfifo|mkisofs|mknod|more|most|mount|mtools|mtr|mv|mmv|nano|netstat|nice|nl|nohup|notify-send|nslookup|open|op|passwd|paste|pathchk|ping|pkill|popd|pr|printcap|printenv|printf|ps|pushd|pv|pwd|quota|quotacheck|quotactl|ram|rar|rcp|read|readarray|readonly|reboot|rename|renice|remsync|rev|rm|rmdir|rsync|screen|scp|sdiff|sed|seq|service|sftp|shift|shopt|shutdown|sleep|slocate|sort|source|split|ssh|stat|strace|su|sudo|sum|suspend|sync|tail|tar|tee|test|time|timeout|times|touch|top|traceroute|trap|tr|tsort|tty|type|ulimit|umask|umount|unalias|uname|unexpand|uniq|units|unrar|unshar|uptime|useradd|userdel|usermod|users|uuencode|uudecode|v|vdir|vi|vmstat|wait|watch|wc|wget|whereis|which|who|whoami|write|xargs|xdg-open|yes|zip)(?=$|\s|;|\||&)/,lookbehind:!0},keyword:{pattern:/(^|\s|;|\||&)(?:let|:|\.|if|then|else|elif|fi|for|break|continue|while|in|case|function|select|do|done|until|echo|exit|return|set|declare)(?=$|\s|;|\||&)/,lookbehind:!0},"boolean":{pattern:/(^|\s|;|\||&)(?:true|false)(?=$|\s|;|\||&)/,lookbehind:!0},operator:/&&?|\|\|?|==?|!=?|<<<?|>>|<=?|>=?|=~/,punctuation:/\$?\(\(?|\)\)?|\.\.|[{}[\];]/};var a=t.variable[1].inside;a["function"]=e.languages.bash["function"],a.keyword=e.languages.bash.keyword,a.boolean=e.languages.bash.boolean,a.operator=e.languages.bash.operator,a.punctuation=e.languages.bash.punctuation}(Prism);
+</script>
+
+
+</body>
+
+</html>
